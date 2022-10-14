@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+.card {
+    border: 1px solid black;
+    width: max-content;
+    padding: 5px 10px;
+}
+
+form>input {
+    margin: 10px;
+    text-align: center;
+}
