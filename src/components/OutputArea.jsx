@@ -3,7 +3,7 @@ import Card from "./Card";
 export default function OutputArea(props) {
     const { students, deleteStudent } = props;
     return (
-        <>
+        <div className="cards">
             {
                 students.map((student) => <Card
                     key={student.id}
@@ -11,6 +11,6 @@ export default function OutputArea(props) {
                     deleteStudent={deleteStudent}
                 />)
             }
-        </>
+        </div>
     )
 }

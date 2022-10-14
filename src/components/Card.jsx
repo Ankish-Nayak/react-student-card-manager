@@ -3,13 +3,15 @@ export default function Card(props) {
     const { student, deleteStudent } = props;
     return (
         <div className="card">
-            <p className="card-fristName">{student.firstName}</p>
-            <p className="card-lastName">{student.lastName}</p>
-            <button className="card-button" onClick={() => {
+            <div className="card-data">
+            <p className="card-firstName"><span className='light'>First Name</span>: {student.firstName}</p>
+            <p className="card-lastName"><span className='light'>Last Name</span> : {student.lastName}</p>
+            </div>
+            <button className="card-delete" onClick={() => {
                 deleteStudent(student.id);
             }}>
                 Delete
             </button>
         </div>
     );
-}
+} 

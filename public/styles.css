@@ -2,6 +2,13 @@
     box-sizing: border-box;
 }
 
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .card {
     border: 1px solid black;
     width: max-content;
@@ -11,4 +18,80 @@
 form>input {
     margin: 10px;
     text-align: center;
+} 
+
+
+/* Input Area */
+.inputArea {
+    width: max-content;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.inputArea-firstName,
+.inputArea-lastName {
+    text-align: center;
+    margin: 5px;
+    font-size: 1.2em;
+}
+
+.inputArea-add {
+    padding: 2px 40px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-top: 5px;
+    font-size: 1.2em;
+}
+
+.inputArea-add:hover {
+    background-color: black;
+    color: white;
+}
+
+
+/* Card */
+.cards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 1px solid black;
+    width: max-content;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    /*  cetering  */
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    font-size: 1.2em;
+    margin: 10px;
+}
+
+.light {
+    font-weight: normal;
+}
+
+.card-delete {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: 1.2em;
+}
+
+.card-delete:hover {
+    background-color: black;
+    color: white;
 }

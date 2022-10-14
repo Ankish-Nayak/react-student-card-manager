@@ -2,24 +2,36 @@ import React from 'react';
 import {nanoid} from 'nanoid';
 import InputArea from './InputArea';
 import OutputArea from './OutputArea'; 
+import Navbar from './Navbar';
 export default function App() {
     const [student, setStudent] = React.useState({
         firstName: '',
         lastName: ''
     });
-    const [students, setStudents] = React.useState([]);
+    let array = [];
+    if(localStorage.getItem('students')){
+        array = JSON.parse(localStorage.getItem('students'));
+    }
+    const [students, setStudents] = React.useState(array);
 
-    function addStudent() {
-        setStudents((prevStudents) => {
+    React.useEffect(()=>{
+        localStorage.setItem('students',JSON.stringify(students));
+        console.log('r');
+    },[students]);
+
+
+    function addStudent() { 
+        setStudents(prevStudents => {
             return [
                 ...prevStudents,
                 {
-                    id: nanoid(),
-                    ...student
+                    ...student,
+                    id: nanoid()
                 }
             ];
         });
     }
+
     function deleteStudent(id) {
         setStudents((prevStudents) => {
             return prevStudents.filter(prevStudent => prevStudent.id !== id);
@@ -33,9 +45,10 @@ export default function App() {
                 [name]: value
             };
         });
-    } 
+    }  
     return (
         <div className="App">
+            <Navbar />
             <InputArea
                 student={student}
                 addStudent={addStudent}
